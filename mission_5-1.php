@@ -19,19 +19,19 @@ $sql="CREATE TABLE IF NOT EXISTS f"
 ."created DATETIME"
 .");";
 $stmt=$pdo->query($sql);
-$sql='SHOW TABLES';
-$result=$pdo->query($sql);
-foreach($result as $row){
-echo$row[0];
-echo'<br>';
-}
-echo"<hr>";
-$sql='SHOW CREATE TABLE f';
-$result=$pdo->query($sql);
-foreach($result as $row){
-echo$row[1];
-}
-echo"<hr>";
+// $sql='SHOW TABLES';
+// $result=$pdo->query($sql);
+// foreach($result as $row){
+// echo$row[0];
+// echo'<br>';
+// }
+// echo"<hr>";
+// $sql='SHOW CREATE TABLE f';
+// $result=$pdo->query($sql);
+// foreach($result as $row){
+// echo$row[1];
+// }
+// echo"<hr>";
 $sql=$pdo->prepare("INSERT INTO f (name, comment, created) VALUES(:name, :comment, :created)");
 $sql->bindParam(':name',$name,PDO::PARAM_STR);
 $sql->bindParam('comment', $comment,PDO::PARAM_STR);
